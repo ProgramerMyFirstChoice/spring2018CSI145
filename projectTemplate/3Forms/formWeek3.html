@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" >
+      <head>
+        <meta charset="utf-8" >
+        <title></title>
+          <style>
+              .form-style {
+                  max-width: 500px;
+                  padding: 20px 10px;
+                  border-radius: 8px;
+                  margin: 10px auto;
+                  font: 13px Arial, Helvetica, sans-serif;
+                  background: #f4f7f8;
+              }
+              .form-style legend {
+                  font-size: 1.4em;
+                  margin-bottom: 10px;
+              }
+             
+              .form-style label {
+                  display: block;
+                  margin: 0px 0px 15px 0px;
+              }
+              .form-style label > span {
+                  width: 100px;
+                  font-weight: bold;
+                  float: left;
+                  padding-top: 8px;
+                  padding-right: 5px;
+              }
+
+              .form-style span.required {
+                  color: red;
+              }
+              .form-style input.input-field {
+                  width: 48%;
+              }
+              .form-style fieldset {
+                  border: none;
+              }
+              .form-style legend {
+                  font-size: 1.4em;
+                  margin-bottom: 10px;
+              }
+              .form-style .number {
+                  background: #1abc9c;
+                  color: #fff;
+                  height: 30px;
+                  width: 30px;
+                  display: inline-block;
+                  font-size: 0.8em;
+                  margin-right: 4px;
+                  line-height: 30px;
+                  text-align: center;
+                  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+                  border-radius: 15px 15px 15px 0px;
+              }
+          </style>
+      </head>
+      <body>
+        <h3>Form to collect user data</h3>
+        <p>
+          a form is defined by the &lt;form &gt; tag.
+          within the form tag, you can add elements
+          to collect user data
+        </P>
+        <h4>The &lt;input&gt; element</h4>
+        <p>
+          Use the input element to display textboxes,
+          checkboxes, radiobuttons, submit button, etc.
+        </P>
+        Example:
+        <p>
+          using the &lt;input&gt;to display a textbox.
+          This tag define the <i>type</i> attribute.
+          Set this attribute to text.
+        </p>
+        <form class="form-style">
+            <!--Textbox-->
+            <fieldset>
+                <legend><span class="number">1</span>Personal Information(textbox)</legend>
+                <label for="txtfirstname">
+                    <span>First name:<span class="required">*</span> </span>
+                    <input type="text" name="txtfirstname" class="input-field" id="firstName" size="20" /><br />
+                </label>
+
+                <label for="txtLastName">
+                    <span>First name:<span class="required">*</span> </span>
+                    <input type="text" name="txtLastName" class="input-field" id="lastName" size="20" /><br />
+                </label>
+                <!--textbox for numbers only-->
+                <label for="txtQuantity">
+                    <span>Quantity:</span>
+                    <input type="number" name="txtQuantity" id="quantity" size="3" maxlength="3" min="1" max="20" value="10" step="0.1" />
+                </label>
+                <!--input of type date-->
+                <label for="txtBirthdate">
+                    <span>Enter your birth date:<span class="required">*</span> </span>
+                    
+                    <input type="date" name="txtBirthdate" id="birthdate" max="2016-10-04" />
+                </label>
+            </fieldset>
+
+
+            <br />
+            <!--checkboxes-->
+            <fieldset>
+                <legend><span class="number">2</span>Hobbies(checkbox)</legend>
+                Select your hobbies:<br>
+                <input type="checkbox" name="chkRunning" id="running" />Running
+                &nbsp;&nbsp;
+                <input type="checkbox" name="chkGaming" id="gaming" />Gaming
+                &nbsp;&nbsp;
+                <input type="checkbox" name="chkSerfing" id="serfing" />serfing
+                &nbsp;&nbsp;
+                <input type="checkbox" name="chkBiking" id="biking" />Biking
+                <br /><br />
+            </fieldset>
+            <!--radiobuttons-->
+            <fieldset>
+                <legend><span class="number">3</span>Dishs(radio button)</legend>
+                Select your favorite dish:<br>
+                <input type="radio" name="EthnicDishes" id="italian" />Italian <br />
+                <input type="radio" name="EthnicDishes" id="mexican" />Mexican <br />
+                <input type="radio" name="EthnicDishes" id="filipino" />filipino <br />
+                <br />
+            </fieldset>
+            
+            
+
+            <br /><br />
+            
+            <br /><br />
+            <!--input type=color-->
+            Select your favorite color:
+            <input type="color" name="txtcolor" id="favoritecolor" />
+            <br /><br />
+            <!--Entering comments-->
+            <textarea rows="10" cols="20" name="commentArea" id="comments"></textarea>
+            <br /><br />
+            <!--dropdown element-->
+            Select a car you like to have:<br />
+            <select name="cars" id="expensivecars">
+                <option value="bmw-z3">BMW Z3</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="farari">Farari</option>
+                <option value="lamborgini">Lamborgini</option>
+            </select>
+            <br>
+            <input type="submit" value="Submit your request" />
+        </form>
+      </body>
+      </html>
