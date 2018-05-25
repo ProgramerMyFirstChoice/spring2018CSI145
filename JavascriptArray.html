@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+    <script>
+        //create an array of names
+        // The following methd called literal declaration
+        //var names = ["James", "Jones", "Michelle", "Robert", "Tim"];
+
+        // Declaring array regularly
+        var names = new Array();
+        names[0] = "James";
+        names[1] = "Jones";
+        names[2] = "Michelle";
+        names[3] = "Robert";
+        names[3] = "Tim";
+
+        // Declaring Array Condensed type
+        //var names = new Array("James", "Jones", "Michelle", "Robert", "Tim");
+
+        // in c# declare and create an arrayas follows
+        // double[] sales = new double[20];
+        // it reserve 20 memory locations for 20 salesobjects
+        // each object in an array is an array element
+        // we can initialze an array the same way as regular javascript array assignment
+        //that is sales[0] = 100;
+        // the other ways are
+        //double[] sales = new double[20]{100,76,88,100,90};
+        //double[] sales = new double[]{100,76,88,100,90};
+        //double[] sales = {100,76,88,100,90};
+
+
+       
+
+        function initialize() {
+            input = document.getElementById("txtname");
+            output = document.getElementById("displayarea");
+
+        }
+        function AddNameToBeginning() {
+            //get the name from the textbox. Use the value property of the textbox
+            var name = input.value;
+            //add it to the names array
+            if (name != "")
+                names.unshift(name);// add new items to the beginning of the
+            // array and return the new length
+            //display the current array
+            DisplayNames();
+        }
+        function AddNameToEndOfArray() {
+            //get the name from the textbox. Use the value property of the textbox
+            var name = input.value;
+            //add it to the names array
+            if (name != "")
+                names.push(name);// add new items to the end of the array
+
+            //display the current array
+            DisplayNames();
+        }
+        function RemoveFirstName() {
+            names.shift();//removes the first name
+            DisplayNames();
+        }
+        function RemoveLastName() {
+            names.pop(); //removes the last name
+            DisplayNames;
+            
+            
+        }
+        function DisplayNames() {
+            //clear display
+            output.innerHTML = "";
+            for (var i = 0; i < names.length; i++) {
+                output.innerHTML += names[i] + "<br />";
+            }
+            
+            
+
+        }
+        function Search() {
+            //use the indexOf method to search for an item within an array
+            //the indexOf return the index of the searched item, or =-1 if not found
+
+            //get name
+            var name = input.value;
+            var index = names.indexOf(name);
+            if (index >= 0)
+                output.innerHTML = name + " was found at index " + index;
+            else
+                output.innerHTML = name + " was not found in the array names";
+                
+                
+        }
+    </script>
+</head>
+
+<body onload="initialize();">
+    <div>
+        <h2>Introduction to Javascript Arrays</h2>
+        <p>
+            Syntax:<br />
+            <i>var array-name = [item1,item2,item3,....]</i>
+        </p>
+        <p>
+            <b>Example:</b><br />
+            var grades = [90,82, 77,89,97]; <br />
+            var names = ["James","Jones","Michelle","Robert","Tim"];<br />
+            array has a property length in addition to a list of methods.
+            See <a href="http://www.w3schools.com/jsref/jsref_obj_array.asp">Javascript array reference</a>
+      </p>
+        <p id="displayarea"></p>
+        <div>
+            <form>
+                Enter name to add: <input type="text" id="txtname" size="25" /><br /><br />
+                <button class="btn btn-success btn-md btn-block" onclick="return AddNameToBeginning()">Add name to beginning of the array</button>
+                <br />
+                <button class="btn btn-success btn-md btn-block" onclick="return AddNameToEndOfArray()">Add name to end of the array</button>
+                <button class="btn btn-success btn-md btn-block" onclick="return RemoveFirstName()">Remove first name in the array</button>
+                <button class="btn btn-success btn-md btn-block"  onclick="return RemoveLastName()">Remove last name in the array</button>
+                <button class="btn btn-success btn-md btn-block" onclick="return DisplayNames()">Display the array</button>
+                <button class="btn btn-success btn-md btn-block" onclick="return Search()">Search for a name in the array</button>
+            </form>
+        </div>
+        
+    </div>
+   
+    
+</body>
+</html>
